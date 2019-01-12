@@ -12,26 +12,6 @@ namespace Omnipay\FreeKassa\Message;
 
 class PurchaseRequest extends AbstractRequest
 {
-    public function getLanguage()
-    {
-        return $this->getParameter('language');
-    }
-
-    public function setLanguage($value)
-    {
-        return $this->setParameter('language', $value);
-    }
-
-    public function getEmail()
-    {
-        return $this->getParameter('email');
-    }
-
-    public function setEmail($value)
-    {
-        return $this->setParameter('email', $value);
-    }
-
     public function getData()
     {
         $this->validate(
