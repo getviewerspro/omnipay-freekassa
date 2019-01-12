@@ -35,6 +35,44 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         return $this->setParameter('purse', $value);
     }
+    
+    /**
+     * Get the language.
+     * @return string secret key
+     */
+    public function getLanguage()
+    {
+        return $this->getParameter('language');
+    }
+    
+    /**
+     * Set the language.
+     * @param string $key secret key
+     * @return self
+     */
+    public function setLanguage($value)
+    {
+        return $this->setParameter('language', $value);
+    }
+
+    /**
+     * Get the email.
+     * @return string secret key
+     */
+    public function getEmail()
+    {
+        return $this->getParameter('email');
+    }
+    
+    /**
+     * Set the email.
+     * @param string $key secret key
+     * @return self
+     */
+    public function setEmail($value)
+    {
+        return $this->setParameter('email', $value);
+    }
 
     /**
      * Get the secret key.
