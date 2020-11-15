@@ -74,6 +74,11 @@ class CompletePurchaseResponse extends AbstractResponse
         return (string)$this->data['AMOUNT'];
     }
 
+    public function getMoney()
+    {
+        return NULL;
+    }
+
     public function getSign()
     {
         return $this->data['SIGN'];
