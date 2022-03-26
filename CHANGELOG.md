@@ -1,8 +1,13 @@
 # #hiqdev/omnipay-freekassa
 
-## [Under development]
+## [3.0.1] - 2021-04-05
 
-- Added basics ([@hiqsol])
+- Add Currency property support (#3) ([@SilverFire], [@BladeRoot])
+
+## [3.0.0] - 2019-10-17
+
+- Update to Omnipay v3 ([@SilverFire])
+- Added basics ([@SilverFire], [@hiqsol])
 
 ## [Development started] - 2017-03-29
 
@@ -15,3 +20,5 @@
 [@BladeRoot]: https://github.com/BladeRoot
 [bladeroot@gmail.com]: https://github.com/BladeRoot
 [Under development]: https://github.com/hiqdev/omnipay-freekassa/releases
+[3.0.0]: https://github.com/hiqdev/omnipay-freekassa/releases/tag/3.0.0
+[3.0.1]: https://github.com/hiqdev/omnipay-freekassa/compare/3.0.0...3.0.1

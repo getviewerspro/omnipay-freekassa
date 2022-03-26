@@ -12,6 +12,26 @@ namespace Omnipay\FreeKassa\Message;
 
 class PurchaseRequest extends AbstractRequest
 {
+    public function getLanguage()
+    {
+        return $this->getParameter('language');
+    }
+
+    public function setLanguage($value)
+    {
+        return $this->setParameter('language', $value);
+    }
+
+    public function getClient(): string
+    {
+        return (string) $this->getParameter('client');
+    }
+
+    public function setClient($value)
+    {
+        return $this->setParameter('client', $value);
+    }
+
     public function getData()
     {
         $this->validate(
@@ -23,20 +43,26 @@ class PurchaseRequest extends AbstractRequest
             'm' => $this->getPurse(),
             'oa' => $this->getAmount(),
             'o' => $this->getTransactionId(),
-            'i' => strtolower($this->getCurrency()),
             's' => $this->calculateSignature(),
             'lang' => $this->getLanguage(),
-            'em' => $this->getEmail()
+            'us_client' => $this->getClient(),
+            'currency' => strtoupper($this->getCurrency() ?? 'RUB'),
+            'us_system' => 'freekassa',
+            'us_currency' => strtoupper($this->getCurrency() ?? 'RUB'),
         ]);
     }
 
-    public function calculateSignature()
+    /**
+     * @return string
+     */
+    public function calculateSignature(): string
     {
         return md5(implode(':', [
             $this->getPurse(),
-            $this->getAmount(),
+            rtrim($this->getAmount(), "0."),
             $this->getSecretKey(),
-            $this->getTransactionId()
+            strtoupper($this->getCurrency() ?? 'RUB'),
+            $this->getTransactionId(),
         ]));
     }
 

@@ -76,7 +76,7 @@ class CompletePurchaseResponse extends AbstractResponse
 
     public function getMoney()
     {
-        return NULL;
+        return null;
     }
 
     public function getSign()
@@ -87,6 +87,11 @@ class CompletePurchaseResponse extends AbstractResponse
     public function getTime()
     {
         return $this->data['us_time'];
+    }
+
+    public function getCurrency()
+    {
+        return $this->data['us_currency'] ?? 'RUB';
     }
 
     /**
@@ -148,8 +153,6 @@ class CompletePurchaseResponse extends AbstractResponse
             159 => 'CARD P2P',
         ];
 
-        return isset($map[$this->data['CUR_ID']])
-            ? $map[$this->data['CUR_ID']]
-            : '';
+        return $map[$this->data['CUR_ID']] ?? '';
     }
 }
