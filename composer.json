@@ -1,5 +1,5 @@
 {
-    "name": "hiqdev/omnipay-freekassa",
+    "name": "getviewerspro/omnipay-freekassa",
     "type": "library",
     "description": "FreeKassa driver for Omnipay PHP payment library",
     "keywords": [
