@@ -59,7 +59,7 @@ class PurchaseRequest extends AbstractRequest
     {
         $str = implode(':', [
             $this->getPurse(),
-            rtrim($this->getAmount(), "0."),
+            $this->getAmount(),
             $this->getSecretKey(),
             strtoupper($this->getCurrency() ?? 'RUB'),
             $this->getTransactionId(),
