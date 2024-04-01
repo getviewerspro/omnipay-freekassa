@@ -29,6 +29,8 @@ class CompletePurchaseResponse extends AbstractResponse
         $this->request = $request;
         $this->data    = $data;
 
+        info([$this->getSign(), $this->calculateSignature()]);
+
         if ($this->getSign() !== $this->calculateSignature()) {
             throw new InvalidResponseException('Invalid hash');
         }
