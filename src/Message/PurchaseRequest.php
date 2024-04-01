@@ -57,13 +57,15 @@ class PurchaseRequest extends AbstractRequest
      */
     public function calculateSignature(): string
     {
-        return md5(implode(':', [
+        $str = implode(':', [
             $this->getPurse(),
             rtrim($this->getAmount(), "0."),
             $this->getSecretKey(),
             strtoupper($this->getCurrency() ?? 'RUB'),
             $this->getTransactionId(),
-        ]));
+        ]);
+        info($str);
+        return md5($str);
     }
 
     public function sendData($data)
