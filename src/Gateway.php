@@ -95,6 +95,16 @@ class Gateway extends AbstractGateway
         return $this->setParameter('secretKey2', $value);
     }
 
+    public function setEmail($value)
+    {
+        return $this->setParameter("email", $value);
+    }
+
+    public function getEmail()
+    {
+        return $this->getParameter("email");
+    }
+
     /**
      * @param array $parameters
      * @return \Omnipay\ePayService\Message\PurchaseRequest

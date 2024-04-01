@@ -77,4 +77,14 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         return $this->setParameter('secretKey2', $value);
     }
+
+    public function setEmail($value)
+    {
+        return $this->setParameter("email", $value);
+    }
+
+    public function getEmail()
+    {
+        return $this->getParameter("email");
+    }
 }

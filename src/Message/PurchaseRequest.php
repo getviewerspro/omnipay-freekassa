@@ -44,6 +44,7 @@ class PurchaseRequest extends AbstractRequest
             'oa' => $this->getAmount(),
             'o' => $this->getTransactionId(),
             's' => $this->calculateSignature(),
+            'em' => $this->getEmail(),
             'lang' => $this->getLanguage(),
             'us_client' => $this->getClient(),
             'currency' => strtoupper($this->getCurrency() ?? 'RUB'),
